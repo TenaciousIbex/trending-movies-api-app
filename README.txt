@@ -1,14 +1,11 @@
-Trending Movies Website - Capstone Project
-CS-10430
+##Trending Movies Web Application
 ##Author
 Jennifer Olland
 Rowan University
 Spring 2025 - Capstone Experience
 
 
-Overview:
----------
-Project Overview
+## Project Overview
 
 This project is a collaborative web application that pulls data from multiple movie-related APIs stores the data in a MySQL database hosted on Railway, and displays the results on a dynamic Flask-based website.
 
@@ -16,7 +13,7 @@ Each team member selected a unique movie API, parsed relevant data, stored it in
 
 ---
 
-Technologies Used:
+## Technologies Used:
 ------------------
 - Python 3
 - Flask
@@ -27,7 +24,7 @@ Technologies Used:
 
 ---
 
-Team Contributions
+##Team Contributions
 
 | Member    | API Focus                    | Table Name         |
 |-----------|------------------------------|--------------------|
@@ -37,7 +34,7 @@ Team Contributions
 
 ---
 
-Technologies Used
+##Technologies Used
 
 - Python 3.11
 - Flask
@@ -48,7 +45,7 @@ Technologies Used
 
 ---
 
-Files:
+##Files:
 
 MyProjectFolder/
 ├── app.py # Flask backend server
@@ -61,16 +58,16 @@ MyProjectFolder/
 
 ---
 
-To Run:
+##To Run:
 
 1. Make sure MySQL server is running and database is imported
-2. Run: `python movie_api.py` to load data
+2. Run: `python movie_api.py` to load data (Install dependencies)
 3. Run: `python app.py`
 4. Open your browser and go to `http://127.0.0.1:5000`
 
 ---
 
-Credits:
+##Credits:
 Team: Jennifer (TMDB API), Ryan (Top Picks), Natalina (Genre & Ratings)
 Instructor: Professor Michael Chu
 Course: CS-10430 – Capstone Experience
@@ -89,4 +86,5 @@ TMDB API → movie_api.py → MySQL Database
 movie_api.py loads data into MySQL(run when you want new data)
 app.py pulls that data and serves it to the browser
 index.html displays the data as a functional webpage
+
 
