@@ -1,9 +1,11 @@
 ##Trending Movies Web Application
+Flask web application that pulls trending movie data from the TMDB API, stores it in MySQL, and displays it through a dynamic web interface.
+
+CS-10430
 ##Author
 Jennifer Olland
 Rowan University
 Spring 2025 - Capstone Experience
-
 
 ## Project Overview
 
@@ -86,5 +88,6 @@ TMDB API → movie_api.py → MySQL Database
 movie_api.py loads data into MySQL(run when you want new data)
 app.py pulls that data and serves it to the browser
 index.html displays the data as a functional webpage
+
 
 
