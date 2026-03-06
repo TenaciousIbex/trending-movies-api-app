@@ -13,14 +13,14 @@ Spring 2025 - Capstone Experience
 
 ## Project Overview
 
-This project is a collaborative web application that pulls data from multiple movie-related APIs stores the data in a MySQL database hosted on Railway, and displays the results on a dynamic Flask-based website.
+This project is a collaborative web application that pulls data from multiple movie-related APIs, stores the data in a MySQL database hosted on Railway, and displays the results on a dynamic Flask-based website.
 
 Each team member selected a unique movie API, parsed relevant data, stored it in a shared database, and built a unified user interface to display combined content.
 
 ---
 
-## Technologies Used:
-------------------
+## Technologies Used
+
 - Python 3
 - Flask
 - MySQL Workbench
@@ -30,7 +30,7 @@ Each team member selected a unique movie API, parsed relevant data, stored it in
 
 ---
 
-##Team Contributions
+## Team Contributions
 
 | Member    | API Focus                    | Table Name         |
 |-----------|------------------------------|--------------------|
@@ -40,8 +40,9 @@ Each team member selected a unique movie API, parsed relevant data, stored it in
 
 ---
 
-##Files:
+## Files
 
+```
 MyProjectFolder/
 ├── app.py # Flask backend server
 ├── movie_api.py # API connection + MySQL data insertion
@@ -50,10 +51,10 @@ MyProjectFolder/
 ├── .env # Stores API keys and DB credentials (NOT shared)
 ├── capstone_db_setup.sql # Creates shared MySQL schema
 └── README.md # You're reading this
-
+```
 ---
 
-##To Run:
+## To Run
 
 1. Make sure MySQL server is running and database is imported
 2. Run: `python movie_api.py` to load data (Install dependencies)
@@ -62,25 +63,13 @@ MyProjectFolder/
 
 ---
 
-##Credits:
+## Credits
 Team: Jennifer (TMDB API), Ryan (Top Picks), Natalina (Genre & Ratings)
 Instructor: Professor Michael Chu
 Course: CS-10430 – Capstone Experience
 
 ---
 
-Stage 1&2
-
-TMDB API → movie_api.py → MySQL Database
-                ↓
-            app.py (Flask)
-                ↓
-        index.html (Webpage)
-
-
-movie_api.py loads data into MySQL(run when you want new data)
-app.py pulls that data and serves it to the browser
-index.html displays the data as a functional webpage
 
 
 
