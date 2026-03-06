@@ -1,8 +1,8 @@
-##Trending Movies Web Application
+## Trending Movies Web Application
 Flask web application that pulls trending movie data from the TMDB API, stores it in MySQL, and displays it through a dynamic web interface.
 
 CS-10430
-##Author
+## Author
 Jennifer Olland
 Rowan University
 Spring 2025 - Capstone Experience
@@ -33,17 +33,6 @@ Each team member selected a unique movie API, parsed relevant data, stored it in
 | Jennifer  | TMDB Trending Movies         | `movies_jennifer`  |
 | Natalina  | Genre + Content Ratings      | `movies_natalina`  |
 | Ryan      | Top-Rated Historical Picks   | `movies_ryan`      |
-
----
-
-##Technologies Used
-
-- Python 3.11
-- Flask
-- MySQL via [Railway](https://railway.app)
-- TMDB API for trending movie data
-- HTML + Jinja2 templating
-- dotenv for environment variable security
 
 ---
 
@@ -88,6 +77,7 @@ TMDB API → movie_api.py → MySQL Database
 movie_api.py loads data into MySQL(run when you want new data)
 app.py pulls that data and serves it to the browser
 index.html displays the data as a functional webpage
+
 
 
 
