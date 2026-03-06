@@ -1,4 +1,4 @@
-## Trending Movies Web Application
+# Trending Movies Web Application
 Flask web application that pulls trending movie data from the TMDB API, stores it in MySQL, and displays it through a dynamic web interface.
 
 ## Application Preview
@@ -69,6 +69,7 @@ Instructor: Professor Michael Chu
 Course: CS-10430 – Capstone Experience
 
 ---
+
 
 
 
