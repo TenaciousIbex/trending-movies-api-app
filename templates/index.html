@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Trending Movies{% endblock %}
+
+{% block content %}
+
+<section id="jennifer">
+    <h2>From TMDB (Jennifer)</h2>
+    {% for movie in jen_data %}
+        <div class="movie-entry">
+            {% if movie.poster_url %}
+                <img src="{{ movie.poster_url }}" alt="{{ movie.title }}">
+            {% endif %}
+            <div>
+                <p><strong>{{ movie.title }}</strong> - {{ movie.release_date }} ({{ movie.popularity }})</p>
+                <span class="genre-label">{{ movie.genres }}</span><br>
+                <em>{{ movie.overview }}</em>
+            </div>
+        </div>
+    {% else %}
+        <p>No TMDB data available.</p>
+    {% endfor %}
+</section>
+
+<section id="natalina">
+    <h2>IMDb Plot Summaries (Natalina)</h2>
+    {% for movie in natalina_data %}
+        <div class="movie-entry">
+            <div>
+                <p><strong>{{ movie.title }}</strong> ({{ movie.year }})</p>
+                <em>{{ movie.description }}</em>
+            </div>
+        </div>
+    {% else %}
+        <p>No IMDb data available.</p>
+    {% endfor %}
+</section>
+
+<section id="ryan">
+    <h2>Top-Rated Picks (Ryan's API)</h2>
+    {% for movie in ryan_data %}
+        <div class="movie-entry">
+            <div>
+                <p><strong>{{ movie.title }}</strong> ({{ movie.year }})</p>
+                <span class="genre-label">{{ movie.genres }}</span><br>
+                <em>Rating: {{ movie.rating }}</em>
+            </div>
+        </div>
+    {% else %}
+        <p>No data from Ryan's API available.</p>
+    {% endfor %}
+</section>
+
+{% endblock %}

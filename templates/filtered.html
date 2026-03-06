@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}{{ genre.title() }} Movies{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2 class="mt-4">Filtered by Genre: <strong>{{ genre.title() }}</strong></h2>
+  <a href="{{ url_for('home') }}">← Back to All Movies</a>
+
+  <hr>
+
+  <h3>Jennifer's Movies</h3>
+  {% if jen %}
+    <ul>
+    {% for movie in jen %}
+      <li>
+        <strong>{{ movie.title }}</strong>
+        {% if movie.release_date %} ({{ movie.release_date }}) {% endif %}<br>
+        <em>{{ movie.genres }}</em><br>
+        {{ movie.overview or movie.description }}
+      </li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>No Jennifer movies in this genre.</p>
+  {% endif %}
+
+  <hr>
+
+  <h3>Ryan's Movies</h3>
+  {% if ryan %}
+    <ul>
+    {% for movie in ryan %}
+      <li>
+        <strong>{{ movie.title }}</strong>
+        {% if movie.year %} ({{ movie.year }}) {% endif %}<br>
+        <em>{{ movie.genres }}</em>
+      </li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>No Ryan movies in this genre.</p>
+  {% endif %}
+
+  <hr>
+
+  <h3>Natalina's Movies</h3>
+  {% if natalina %}
+    <ul>
+    {% for movie in natalina %}
+      <li>
+        <strong>{{ movie.title }}</strong>
+        {% if movie.release_date %} ({{ movie.release_date }}) {% endif %}<br>
+        <em>{{ movie.genres }}</em><br>
+        {{ movie.description }}
+      </li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>No Natalina movies in this genre.</p>
+  {% endif %}
+
+  <br>
+  <a href="{{ url_for('home') }}" class="btn btn-primary">Back to All Movies</a>
+</div>
+{% endblock %}

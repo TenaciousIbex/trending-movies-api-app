@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Trending Movies{% endblock %}</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f4efff;
+      font-family: 'Raleway', sans-serif;
+      color: #3c2a60;
+      padding: 20px;
+      margin: 0;
+    }
+
+    header {
+      background-color: #3c2a60;
+      padding: 1.5rem 0;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #f4efff;
+      margin: 0;
+    }
+
+    .top-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    nav a {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 10px;
+      color: #6a4fb6;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #4a3791;
+      text-decoration: underline;
+    }
+
+    form label {
+      font-weight: bold;
+    }
+
+    form select {
+      padding: 0.4rem;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .movie-box {
+      background: #ffffff;
+      border: 1px solid #d9c9ff;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 2px 2px 5px rgba(130, 110, 190, 0.1);
+    }
+
+    .movie-box strong {
+      font-size: 1.1em;
+      color: #4c379a;
+    }
+
+    .genre-label {
+      font-size: 0.9em;
+      color: #7c60b0;
+    }
+
+    .btn {
+      background-color: #b497d6;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #9d81c9;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Trending Movies Capstone Project: Group 6</h1>
+  </header>
+
+  <div class="top-controls">
+    <form action="{{ url_for('filter_all_by_genre', genre='') }}" method="get" id="genreForm">
+      <label for="genreSelect">Filter by Genre:</label>
+      <select name="genre" id="genreSelect" onchange="submitGenre()">
+        <option value="" disabled selected>Select Genre</option>
+        <option value="Action">Action</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Drama">Drama</option>
+        <option value="Horror">Horror</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+        <option value="Romance">Romance</option>
+        <option value="Thriller">Thriller</option>
+      </select>
+    </form>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="#jennifer">Jennifer</a>
+      <a href="#natalina">Natalina</a>
+      <a href="#ryan">Ryan</a>
+    </nav>
+  </div>
+
+  {% block content %}{% endblock %}
+
+  <footer style="text-align:center; padding: 1rem; background: #222; color: #aaa;">
+    <p>&copy; 2025 Trending Movies Capstone – Group 6</p>
+  </footer>
+
+  <button onclick="topFunction()" id="backToTopBtn" title="Go to top" style="display: none; position: fixed; bottom: 20px; right: 30px; background-color: #6a4fb6; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">
+    ↑ Top
+  </button>
+
+  <script>
+    function submitGenre() {
+      const selected = document.getElementById('genreSelect').value;
+      if (selected) {
+        window.location.href = '/filter/' + encodeURIComponent(selected);
+      }
+    }
+
+    // Back to top
+    window.onscroll = function () {
+      const btn = document.getElementById("backToTopBtn");
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    function topFunction() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
